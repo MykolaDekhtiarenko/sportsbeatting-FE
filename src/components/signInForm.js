@@ -22,13 +22,16 @@ class SignInForm extends React.Component {
 
     onSubmit = (event) => {
         event.preventDefault();
-        this.props.userSignInRequest("Basic " + base64.encode(this.state.email + ":" + this.state.password))
-            .then(() => this.context.router.history.push("/home"))
-            .catch(error => {
-                this.processServerError(error.response.data);
-            });
-
+        let authToken = "Basic " + base64.encode(this.state.email + ":" + this.state.password);
+        this.props.userSignInRequest(authToken)
+            .then(() => this.processSucsessSignIn(authToken))
+            .catch(error => { this.processServerError(error.response.data); } );
     };
+
+    processSucsessSignIn = (authToken) => {
+        localStorage.setItem("authToken", authToken);
+        this.context.router.history.push("/home");
+    }
 
     processServerError = (data) => {
         console.log(data);

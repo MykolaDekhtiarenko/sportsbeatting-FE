@@ -22,8 +22,6 @@ code {
 
 .form-error {
     width: 100%;
-    margin-top: .25rem;
-    margin-bottom: .25rem;
-    font-size: 80%;
+    padding: .1rem;
     color: #dc3545;
 }
