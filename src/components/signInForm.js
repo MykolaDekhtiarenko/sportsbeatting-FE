@@ -77,7 +77,7 @@ SignInForm.propTypes = {
 };
 
 SignInForm.contextTypes = {
-    router: PropTypes.func.isRequired
+    router: PropTypes.object.isRequired
 };
 
 export default SignInForm;

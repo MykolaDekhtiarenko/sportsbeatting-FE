@@ -124,7 +124,7 @@ SignUpForm.propTypes = {
 };
 
 SignUpForm.contextTypes = {
-    router: PropTypes.func.isRequired
+    router: PropTypes.object.isRequired
 };
 
 
