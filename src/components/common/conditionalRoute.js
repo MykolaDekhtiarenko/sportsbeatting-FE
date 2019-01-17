@@ -1,14 +1,13 @@
 import React from "react";
 import {Redirect, Route} from "react-router-dom";
 
-export const PrivateRoute = ({component: Component, ...rest}) => (
+export const ConditionalRoute = ({component: Component, condition, redirectUrl, ...rest}) => (
     <Route
     {...rest}
-
     render = { props =>
-        localStorage.getItem("authToken") ? (<Component {...props}/>) : (
+        condition ? (<Component {...props}/>) : (
             <Redirect to={{
-                pathname: "/signin",
+                pathname: redirectUrl,
                 state: {from: props.location}
             }}/>
         )
