@@ -11,7 +11,9 @@ class SignUpPage extends React.Component {
         return (
             <div>
                 <Header/>
-                <SignUpForm userSignUpRequest={userSignUpRequest}/>
+                <div className="container-fluid">
+                    <SignUpForm userSignUpRequest={userSignUpRequest}/>
+                </div>
             </div>
         );
     }

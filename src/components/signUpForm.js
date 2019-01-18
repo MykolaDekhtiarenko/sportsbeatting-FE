@@ -3,6 +3,7 @@ import {Link} from "react-router-dom";
 import PropTypes from "prop-types";
 import TextFieldGroup from "../components/common/textFieldGroup"
 import {processValidationServerError} from "../utils/serverResponceUtils";
+import ErrorAlert from "./common/errorAlert";
 
 class SignUpForm extends React.Component {
 
@@ -57,7 +58,7 @@ class SignUpForm extends React.Component {
     render() {
         const {errors} = this.state;
         return (
-            <div className="container-fluid">
+
                 <div className="row justify-content-md-center justify-content-lg-center">
                     <div className="col-md-8 col-lg-4">
                         <form className="form" onSubmit={this.onSubmit}>
@@ -107,14 +108,13 @@ class SignUpForm extends React.Component {
                                                 type="date"
                                 />
                             </div>
-                            {errors.general && <div className="form-error">{errors.general}</div>}
+                            <ErrorAlert value ={errors.general}/>                        
                             <div className="form-group">
                                 <button type="submit" className="btn btn-primary">Sign up</button>
                             </div>
                         </form>
                     </div>
                 </div>
-            </div>
         );
     }
 }

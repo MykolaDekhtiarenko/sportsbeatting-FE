@@ -4,6 +4,7 @@ import base64 from "base-64";
 import PropTypes from 'prop-types';
 import TextFieldGroup from "../components/common/textFieldGroup";
 import {processValidationServerError} from "../utils/serverResponceUtils";
+import ErrorAlert from "./common/errorAlert";
 
 class SignInForm extends React.Component {
 
@@ -62,7 +63,7 @@ class SignInForm extends React.Component {
                                             name="password"
                                             type="password"
                             />
-                            {errors.general && <div className="form-error">{errors.general}</div>}
+                            <ErrorAlert value={errors.general}/>
                             <button type="submit" className="btn btn-primary">Submit</button>
                         </form>
                     </div>
