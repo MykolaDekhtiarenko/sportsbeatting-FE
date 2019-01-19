@@ -3,7 +3,7 @@ import {Link} from 'react-router-dom';
 import base64 from "base-64";
 import PropTypes from 'prop-types';
 import TextFieldGroup from "../components/common/textFieldGroup";
-import {processValidationServerError} from "../utils/serverResponceUtils";
+import {processValidationServerError} from "../utils/utils";
 import ErrorAlert from "./common/errorAlert";
 
 class SignInForm extends React.Component {

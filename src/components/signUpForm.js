@@ -2,7 +2,7 @@ import React from "react";
 import {Link} from "react-router-dom";
 import PropTypes from "prop-types";
 import TextFieldGroup from "../components/common/textFieldGroup"
-import {processValidationServerError} from "../utils/serverResponceUtils";
+import {processValidationServerError} from "../utils/utils";
 import ErrorAlert from "./common/errorAlert";
 
 class SignUpForm extends React.Component {

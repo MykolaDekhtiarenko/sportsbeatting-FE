@@ -7,3 +7,7 @@ export function processValidationServerError(errors) {
     console.log(data);
     return data;
 }
+
+export function getAuthToken(){
+    return localStorage.getItem("authToken");
+}
