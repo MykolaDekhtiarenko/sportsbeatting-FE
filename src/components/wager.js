@@ -10,5 +10,6 @@ export const Wager = (props) => (
         <td>{props.wager.wagerAmount} {props.wager.wagerCurrency}</td>
         <td>{props.wager.win}</td>
         <td>{props.wager.processed}</td>
+        <td><i className="material-icons danger" onClick={props.delete}>delete</i></td>
     </tr>
 );
